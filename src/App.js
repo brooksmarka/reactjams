@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="dt bg-dark-purple fixed w-100 border-box ph3 pv3 pv4-ns ph4-m ph5-l">
+        <header className="dt bg-dark-purple w-100 border-box ph3 pv3 pv4-ns ph4-m ph5-l">
           <nav className="dt f6 fw6 ttu tracked w-100">
             <Link
               to="/"
@@ -32,7 +32,7 @@ class App extends Component {
             </div>
           </nav>
         </header>
-        <h1>React Jams</h1>
+        <div className="f1 bg-turq">React Jams</div>
 
         <main>
           <Route exact path="/" component={Landing} />

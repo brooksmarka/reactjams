@@ -9,6 +9,10 @@ body {
   font-family: Helvetica;
 }
 
+ul {
+  margin-top: 0;
+}
+
 .App {
   text-align: center;
 }
