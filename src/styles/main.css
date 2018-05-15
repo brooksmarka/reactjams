@@ -1,0 +1,44 @@
+html {
+  height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+}
+
+.App {
+  text-align: center;
+}
+
+.bg-turq {
+  background-color: #438eac;
+}
+
+.bg-dark-purple {
+  background-color: #110934;
+}
+
+.turq {
+  color: #438eac;
+}
+
+.dark-purple {
+  color: #110934;
+}
+.purp {
+  color: #3d1ec8;
+}
+.orange {
+  color: #e2a446;
+}
+
+.light-turq {
+  color: #d4edf7;
+}
+
+.App {
+  text-align: center;
+}
