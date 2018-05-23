@@ -13,6 +13,15 @@ ul {
   margin-top: 0;
 }
 
+.landing {
+  position: relative;
+  min-height: 600px;
+  background-image: url(../band1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }
@@ -45,4 +54,11 @@ ul {
 
 .App {
   text-align: center;
+}
+
+.ion-music-note,
+.ion-radio-waves,
+.ion-iphone {
+  color: #110934;
+  font-size: 5rem;
 }

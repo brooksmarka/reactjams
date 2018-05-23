@@ -32,7 +32,6 @@ class App extends Component {
             </div>
           </nav>
         </header>
-        <div className="f1 bg-turq">React Jams</div>
 
         <main>
           <Route exact path="/" component={Landing} />

@@ -142,7 +142,7 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album">
+      <section className="album bg-turq">
         <section id="album-info">
           <img
             id="album-cover-art"
