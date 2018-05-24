@@ -149,13 +149,13 @@ class Album extends Component {
             alt="album-cover-art"
             src={this.state.album.albumCover}
           />
-          <div className="album-details">
+          <div className="album-details av orange">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
-        <table id="song-list">
+        <table id="song-list av orange">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
@@ -170,13 +170,15 @@ class Album extends Component {
               >
                 <td className="song-actions">
                   <button>
-                    <span className="song-number">{index + 1}</span>
-                    <span className="ion-play" />
-                    <span className="ion-pause" />
+                    <span className="song-number av dark-purple">
+                      {index + 1}
+                    </span>
+                    <span className="ion-play av dark-purple" />
+                    <span className="ion-pause av dark-purple" />
                   </button>
                 </td>
-                <td className="song-title">{song.title}</td>
-                <td className="song-duration">
+                <td className="song-title av orange">{song.title}</td>
+                <td className="song-duration av orange">
                   {this.formatTime(song.duration)}
                 </td>
               </tr>

@@ -25,6 +25,9 @@ ul {
 .App {
   text-align: center;
 }
+.av {
+  font-family: "avenir next", avenir, sans-serif;
+}
 
 .bg-turq {
   background-color: #438eac;

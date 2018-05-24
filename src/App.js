@@ -9,23 +9,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="dt bg-dark-purple w-100 border-box ph3 pv3 pv4-ns ph4-m ph5-l">
-          <nav className="dt f6 fw6 ttu tracked w-100">
+        <header className="dt bg-dark-purple w-100 border-box ph3 pv3 pv3-ns ph3-m ph3-l">
+          <nav className="dt f6 fw6 w-100">
             <Link
               to="/"
               title="Home"
               className="dtc v-mid mid-gray link dim w-25 tl"
             >
               <img
-                src="./assets/images/bloc_jams_logo.png"
+                src="./assets/images/rjlogo.png"
                 alt="Site Logo"
-                className="dib w2 h2 br-100"
+                className="dib w3 h3"
               />
             </Link>
             <div className="dtc v-mid w-75 tr">
               <Link
                 to="/library"
-                className="link turq dim dark-gray f6 f5-ns dib mr3 mr4-ns"
+                className="av link turq dim dark-gray f5 f4-ns dib mr3 mr5-ns"
               >
                 Library
               </Link>
