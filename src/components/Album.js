@@ -143,13 +143,14 @@ class Album extends Component {
   render() {
     return (
       <section className="album bg-turq">
-        <section id="album-info">
+        <section id="album-info cf">
           <img
+            className="fl w-40 ph4 pv4"
             id="album-cover-art"
             alt="album-cover-art"
             src={this.state.album.albumCover}
           />
-          <div className="album-details av orange">
+          <div className="album-details av orange fl w-60 pa4">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>

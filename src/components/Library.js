@@ -13,13 +13,21 @@ class Library extends Component {
       <section className="library av link bg-turq orange">
         {this.state.albums.map((album, index) => (
           <Link to={`/album/${album.slug}`} key={index}>
-            <img src={album.albumCover} alt={album.title} />
-            <div className="link av orange dim dark-gray f1">{album.title}</div>
-            <div className="link av orange dim dark-gray f3">
-              {album.artist}
-            </div>
-            <div className="link av orange dim dark-gray f4">
-              {album.songs.length} songs
+            <div className="cf">
+              <div className="image fl w-40 pa4">
+                <img src={album.albumCover} alt={album.title} />
+              </div>
+              <div className="album-info fl w-60 pa4 dib v-mid">
+                <div className="link av orange dim dark-gray f1">
+                  {album.title}
+                </div>
+                <div className="link av orange dim dark-gray f2">
+                  {album.artist}
+                </div>
+                <div className="link av orange dim dark-gray f4">
+                  {album.songs.length} songs
+                </div>
+              </div>
             </div>
           </Link>
         ))}
