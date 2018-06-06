@@ -24,7 +24,7 @@ class Library extends Component {
                 <div className="link av orange dim dark-gray f2">
                   {album.artist}
                 </div>
-                <div className="link av orange dim dark-gray f4">
+                <div className="link av orange dim dark-gray f4 pa2">
                   {album.songs.length} songs
                 </div>
               </div>

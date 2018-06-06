@@ -142,21 +142,26 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album bg-turq">
-        <section id="album-info cf">
-          <img
-            className="fl w-40 ph4 pv4"
-            id="album-cover-art"
-            alt="album-cover-art"
-            src={this.state.album.albumCover}
-          />
-          <div className="album-details av orange fl w-60 pa4">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
+      <section className="album av bg-turq orange">
+        <section className="cf" id="album-info">
+          <div className="image fl w-40 pa4">
+            <img
+              id="album-cover-art"
+              alt="album-cover-art"
+              src={this.state.album.albumCover}
+            />
+          </div>
+          <div className="album-details fl w-60 av pa4">
+            <div className="f1" id="album-title">
+              {this.state.album.title}
+            </div>
+            <div className="artist f2">{this.state.album.artist}</div>
+            <div className="f4 pa2" id="release-info">
+              {this.state.album.releaseInfo}
+            </div>
           </div>
         </section>
-        <table id="song-list av orange">
+        <table id="song-list av">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
