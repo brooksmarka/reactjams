@@ -22,9 +22,6 @@ ul {
   background-size: cover;
 }
 
-.App {
-  text-align: center;
-}
 .av {
   font-family: "avenir next", avenir, sans-serif;
 }
@@ -37,6 +34,9 @@ ul {
   background-color: #110934;
 }
 
+.bg-orange {
+  background-color: #e2a446;
+}
 .turq {
   color: #438eac;
 }
