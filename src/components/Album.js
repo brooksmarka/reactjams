@@ -151,65 +151,66 @@ class Album extends Component {
               src={this.state.album.albumCover}
             />
           </div>
-          <div className="album-details tj-ns fl-ns w-60-ns av pa4-ns">
-            <div className="f3 f2-ns pa2" id="album-title">
+          <div className="album-details fl-ns w-60-ns av pa4-ns">
+            <div className="album-title f3 f2-ns pa2" id="album-title">
               {this.state.album.title}
             </div>
             <div className="artist f4 f3-ns pa2 fw7">
               {this.state.album.artist}
             </div>
-            <div className="f5 f4-ns pa2 pb4" id="release-info">
+            <div className="release-info f5 f4-ns pa2 pb4" id="release-info">
               {this.state.album.releaseInfo}
             </div>
-            <div>
-              <table className="w-100 collapse fw7" id="song-list av">
-                <colgroup>
-                  <col className="w-5" id="song-number-column" />
-                  <col className="w-85" id="song-title-column" />
-                  <col className="w-5" id="song-duration-column" />
-                </colgroup>
-                <tbody>
-                  {this.state.album.songs.map((song, index) => (
-                    <tr
-                      className="song"
-                      key={index}
-                      onClick={() => this.handleSongClick(song)}
-                    >
-                      <td className="song-actions pl2 tl">
-                        <span className="song-number dim mr3 av orange">
-                          {index + 1}
-                        </span>
-                        <button className="button ba bw1 link dim dib white bg-dark-purple">
-                          <span className="ion-play mr1 av turq" />
-                          <span className="ion-pause av turq" />
-                        </button>
-                      </td>
-                      <td className="song-title tc dim av orange">
-                        {song.title}
-                      </td>
-                      <td className="song-duration tr dim av pr2 pr0-ns orange">
-                        {this.formatTime(song.duration)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <PlayerBar
+              isPlaying={this.state.isPlaying}
+              currentSong={this.state.currentSong}
+              currentTime={this.audioElement.currentTime}
+              duration={this.audioElement.duration}
+              handleSongClick={() =>
+                this.handleSongClick(this.state.currentSong)
+              }
+              handlePrevClick={() => this.handlePrevClick()}
+              handleNextClick={() => this.handleNextClick()}
+              handleTimeChange={e => this.handleTimeChange(e)}
+              handleVolumeChange={e => this.handleVolumeChange(e)}
+              formatTime={t => this.formatTime(t)}
+            />
+          </div>
+          <div>
+            <table className="w-90 collapse fw7" id="song-list av">
+              <colgroup>
+                <col className="w-5" id="song-number-column" />
+                <col className="w-85" id="song-title-column" />
+                <col className="w-5" id="song-duration-column" />
+              </colgroup>
+              <tbody>
+                {this.state.album.songs.map((song, index) => (
+                  <tr
+                    className="song"
+                    key={index}
+                    onClick={() => this.handleSongClick(song)}
+                  >
+                    <td className="song-actions pl4 tl">
+                      <span className="song-number dim mr3 av orange">
+                        {index + 1}
+                      </span>
+                      <button className="button bw0 ba link br-pill dim mb3 dib white bg-dark-purple">
+                        <span className="ion-play v-mid mr2 av turq" />
+                        <span className="ion-pause v-mid av turq" />
+                      </button>
+                    </td>
+                    <td className="song-title tj dim av orange">
+                      {song.title}
+                    </td>
+                    <td className="song-duration tr dim av pr2 pr0-ns orange">
+                      {this.formatTime(song.duration)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
-
-        <PlayerBar
-          isPlaying={this.state.isPlaying}
-          currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime}
-          duration={this.audioElement.duration}
-          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-          handlePrevClick={() => this.handlePrevClick()}
-          handleNextClick={() => this.handleNextClick()}
-          handleTimeChange={e => this.handleTimeChange(e)}
-          handleVolumeChange={e => this.handleVolumeChange(e)}
-          formatTime={t => this.formatTime(t)}
-        />
       </section>
     );
   }

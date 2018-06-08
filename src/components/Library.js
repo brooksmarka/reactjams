@@ -17,7 +17,7 @@ class Library extends Component {
               <div className="image fl-ns w-40-ns pa4">
                 <img src={album.albumCover} alt={album.title} />
               </div>
-              <div className="album-info tj-ns fl-ns w-60-ns pa4-ns">
+              <div className="album-info fl-ns w-60-ns pa4-ns">
                 <div className="link av orange dim dark-gray f3 f2-ns pa2 ">
                   {album.title}
                 </div>
