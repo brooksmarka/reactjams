@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import albumData from "./../data/albums";
 import PlayerBar from "./PlayerBar";
+import SongList from "./SongList";
 
 class Album extends Component {
   constructor(props) {
@@ -176,40 +177,11 @@ class Album extends Component {
               formatTime={t => this.formatTime(t)}
             />
           </div>
-          <div>
-            <table className="w-90 collapse fw7" id="song-list av">
-              <colgroup>
-                <col className="w-5" id="song-number-column" />
-                <col className="w-85" id="song-title-column" />
-                <col className="w-5" id="song-duration-column" />
-              </colgroup>
-              <tbody>
-                {this.state.album.songs.map((song, index) => (
-                  <tr
-                    className="song"
-                    key={index}
-                    onClick={() => this.handleSongClick(song)}
-                  >
-                    <td className="song-actions pl4 tl">
-                      <span className="song-number dim mr3 av orange">
-                        {index + 1}
-                      </span>
-                      <button className="button bw0 ba link br-pill dim mb3 dib white bg-dark-purple">
-                        <span className="ion-play v-mid mr2 av turq" />
-                        <span className="ion-pause v-mid av turq" />
-                      </button>
-                    </td>
-                    <td className="song-title tj dim av orange">
-                      {song.title}
-                    </td>
-                    <td className="song-duration tr dim av pr2 pr0-ns orange">
-                      {this.formatTime(song.duration)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <SongList
+            album={this.state.album}
+            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+            formatTime={t => this.formatTime(t)}
+          />
         </section>
       </section>
     );
