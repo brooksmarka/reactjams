@@ -13,6 +13,14 @@ ul {
   margin-top: 0;
 }
 
+.header {
+  height: 100px;
+}
+
+.title {
+  height: calc(100vh - 100px);
+}
+
 .landing {
   position: relative;
   min-height: 600px;

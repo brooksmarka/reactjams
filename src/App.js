@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="dt bg-dark-purple w-100 border-box ph3 pv3 pv3-ns ph3-m ph3-l">
-          <nav className="dt f6 fw6 w-100">
+        <header className="header dt h3 bg-dark-purple w-100 border-box ph3 pv3 pv3-ns ph3-m ph3-l">
+          <nav className="nav dt fw6 w-100">
             <Link
               to="/"
               title="Home"
