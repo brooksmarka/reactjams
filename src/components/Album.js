@@ -82,7 +82,14 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
-  handleSongClick(song) {
+  handleSongClick = song => {
+    //this.state.currentSong is always equal to the song since
+    //that is what is being passed into the handleSongClick as
+    //as props - so you need to make sure that if you click
+    //a song that is not the current song the song updates
+    //it never gets to the setSong function
+    //do you need to bind it?
+
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong) {
       this.pause();
@@ -92,7 +99,7 @@ class Album extends Component {
       }
       this.play();
     }
-  }
+  };
 
   handlePrevClick() {
     const currentIndex = this.state.album.songs.findIndex(
@@ -178,8 +185,11 @@ class Album extends Component {
             />
           </div>
           <SongList
+            isPlaying={this.state.isPlaying}
+            currentSong={this.state.currentSong}
             album={this.state.album}
-            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+            //handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+            handleSongClick={this.handleSongClick}
             formatTime={t => this.formatTime(t)}
           />
         </section>
