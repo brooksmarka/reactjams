@@ -18,6 +18,7 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       isPlaying: false,
+      isHovering: false,
       volume: 0.8
     };
 
@@ -25,15 +26,15 @@ class Album extends Component {
     this.audioElement.src = album.songs[0].audioSrc;
   }
 
-  play() {
+  play = () => {
     this.audioElement.play();
     this.setState({ isPlaying: true });
-  }
+  };
 
-  pause() {
+  pause = () => {
     this.audioElement.pause();
     this.setState({ isPlaying: false });
-  }
+  };
 
   componentDidMount() {
     this.eventListeners = {
@@ -83,13 +84,6 @@ class Album extends Component {
   }
 
   handleSongClick = song => {
-    //this.state.currentSong is always equal to the song since
-    //that is what is being passed into the handleSongClick as
-    //as props - so you need to make sure that if you click
-    //a song that is not the current song the song updates
-    //it never gets to the setSong function
-    //do you need to bind it?
-
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong) {
       this.pause();
@@ -150,7 +144,7 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album av bg-turq orange">
+      <section className="album avenir bg-turq orange">
         <section className="cf" id="album-info">
           <div className="image fl-ns w-40-ns pa4">
             <img
@@ -159,7 +153,7 @@ class Album extends Component {
               src={this.state.album.albumCover}
             />
           </div>
-          <div className="album-details fl-ns w-60-ns av pa4-ns">
+          <div className="album-details fl-ns w-60-ns avenir pa4-ns">
             <div className="album-title f3 f2-ns pa2" id="album-title">
               {this.state.album.title}
             </div>
@@ -187,8 +181,8 @@ class Album extends Component {
           <SongList
             isPlaying={this.state.isPlaying}
             currentSong={this.state.currentSong}
+            isHovering={this.state.isHovering}
             album={this.state.album}
-            //handleSongClick={() => this.handleSongClick(this.state.currentSong)}
             handleSongClick={this.handleSongClick}
             formatTime={t => this.formatTime(t)}
           />

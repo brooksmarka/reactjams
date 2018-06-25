@@ -14,12 +14,12 @@ const Landing = () => (
         <span className="ion-music-note" />
         <h2 className="point-title orange f2">Choose your music</h2>
         <p className="point-description pa2 light-turq f4">
-          The world is full of music. Why should you have to listen to music
+          The world is full of music. Why should you havenire to listen to music
           that someone else chose?
         </p>
       </div>
       <div className="point fl w-100-m vh-50-m vh-50-ns bg-turq w-third-ns pa3">
-        <span className="ion-radio-waves" />
+        <span className="ion-radio-wavenires" />
         <h2 className="point-title orange f2">Unlimited, streaming, ad-free</h2>
         <p className="point-description pa2 light-turq f4">
           No arbitrary limits. No distractions.
@@ -29,8 +29,8 @@ const Landing = () => (
         <span className="ion-iphone" />
         <h2 className="point-title orange f2">Mobile enabled</h2>
         <p className="point-description pa2 light-turq f4">
-          Listen to your music on the go. This streaming service is available on
-          all mobile platforms.
+          Listen to your music on the go. This streaming service is
+          avenirailable on all mobile platforms.
         </p>
       </div>
     </section>

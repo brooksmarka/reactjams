@@ -14,7 +14,7 @@ const Header = () => (
       <div className="dtc v-mid w-75 tr">
         <Link
           to="/library"
-          className="av link turq dim dark-gray f5 f4-ns dib mr3 mr5-ns"
+          className="avenir link turq dim dark-gray f5 f4-ns dib mr3 mr5-ns"
         >
           Library
         </Link>

@@ -5,7 +5,7 @@ class PlayerBar extends Component {
 
   render() {
     return (
-      <section className="player-bar av">
+      <section className="player-bar avenir">
         <section className="buttons pl2 tc" id="buttons">
           <button
             className="back-button pv2 ph3 bw0 ba link br-pill dim mb3 bg-dark-purple turq"

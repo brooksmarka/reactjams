@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class SongList extends Component {
   render() {
     return (
-      <table className="w-90 collapse fw7" id="song-list av">
+      <table className="w-90 collapse fw7" id="song-list avenir">
         <colgroup>
           <col className="w-5" id="song-number-column" />
           <col className="w-85" id="song-title-column" />
@@ -17,16 +17,24 @@ class SongList extends Component {
               onClick={() => this.props.handleSongClick(song)}
             >
               <td className="song-actions pl4 tl">
-                <span className="song-number dim mr3 av orange">
-                  {index + 1}
-                </span>
                 <button className="button bw0 ba link br-pill dim mb3 dib white bg-dark-purple">
-                  <span className="ion-play v-mid mr2 av turq" />
-                  <span className="ion-pause v-mid av turq" />
+                  {this.props.currentSong.title === song.title ? (
+                    <span
+                      className={
+                        this.props.isPlaying
+                          ? "ion-ios-pause v-mid ml1 mr1 avenir turq"
+                          : "ion-ios-play v-mid ml1 mr1 avenir turq"
+                      }
+                    />
+                  ) : (
+                    <span className="song-number v-mid ml1 mr1 avenir turq">
+                      {index + 1}
+                    </span>
+                  )}
                 </button>
               </td>
-              <td className="song-title tj dim av orange">{song.title}</td>
-              <td className="song-duration tr dim av pr2 pr0-ns orange">
+              <td className="song-title tj dim avenir orange">{song.title}</td>
+              <td className="song-duration tr dim avenir pr2 pr0-ns orange">
                 {this.props.formatTime(song.duration)}
               </td>
             </tr>
