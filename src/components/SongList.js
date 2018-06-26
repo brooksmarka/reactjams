@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
 class SongList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isHovering: false
+    };
+  }
   render() {
     return (
       <table className="w-90 collapse fw7" id="song-list avenir">
@@ -15,6 +22,8 @@ class SongList extends Component {
               className="song"
               key={index}
               onClick={() => this.props.handleSongClick(song)}
+              onMouseEnter={() => this.setState({ isHovering: index })}
+              onMouseLeave={() => this.setState({ isHovering: false })}
             >
               <td className="song-actions pl4 tl">
                 <button className="button bw0 ba link br-pill dim mb3 dib white bg-dark-purple">
@@ -26,6 +35,8 @@ class SongList extends Component {
                           : "ion-ios-play v-mid ml1 mr1 avenir turq"
                       }
                     />
+                  ) : this.state.isHovering === index ? (
+                    <span className="ion-ios-play v-mid ml1 mr1 avenir turq" />
                   ) : (
                     <span className="song-number v-mid ml1 mr1 avenir turq">
                       {index + 1}

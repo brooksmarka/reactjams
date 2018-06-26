@@ -18,7 +18,6 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       isPlaying: false,
-      isHovering: false,
       volume: 0.8
     };
 
@@ -77,6 +76,23 @@ class Album extends Component {
       this.eventListeners.volumechange
     );
   }
+
+  //enterMouse = e => {
+  //if not on current song, then show the play icon
+  //otherwise you are on the currently playing song and you should
+  //not do anything...or show the pause icon
+  // const isSameSong = this.state.currentSong === song;
+  // if (this.state.isPlaying && isSameSong){
+  //   this.setState(isHovering: true)
+  // }
+  //}
+
+  //leaveMouse = e => {
+  //if not on the current song, then go back to showing the index
+  //otherwise you are on the currently playing song and you should
+  //not do anything...or show the pause icon
+
+  //}
 
   setSong(song) {
     this.audioElement.src = song.audioSrc;
@@ -181,10 +197,11 @@ class Album extends Component {
           <SongList
             isPlaying={this.state.isPlaying}
             currentSong={this.state.currentSong}
-            isHovering={this.state.isHovering}
             album={this.state.album}
             handleSongClick={this.handleSongClick}
             formatTime={t => this.formatTime(t)}
+            //enterMouse={this.enterMouse}
+            //leaveMouse={this.leaveMouse}
           />
         </section>
       </section>
