@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import albumData from "./../data/albums";
 import PlayerBar from "./PlayerBar";
 import SongList from "./SongList";
+import { playSong, pauseSong } from "../actions/player_actions";
 
 class Album extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
-      isPlaying: false,
+      //isPlaying: false,
       volume: 0.8
     };
 
@@ -27,12 +29,14 @@ class Album extends Component {
 
   play = () => {
     this.audioElement.play();
-    this.setState({ isPlaying: true });
+    this.props.playSong();
+    //this.setState({ isPlaying: true });
   };
 
   pause = () => {
     this.audioElement.pause();
-    this.setState({ isPlaying: false });
+    this.props.pauseSong();
+    //this.setState({ isPlaying: false });
   };
 
   componentDidMount() {
@@ -77,23 +81,6 @@ class Album extends Component {
     );
   }
 
-  //enterMouse = e => {
-  //if not on current song, then show the play icon
-  //otherwise you are on the currently playing song and you should
-  //not do anything...or show the pause icon
-  // const isSameSong = this.state.currentSong === song;
-  // if (this.state.isPlaying && isSameSong){
-  //   this.setState(isHovering: true)
-  // }
-  //}
-
-  //leaveMouse = e => {
-  //if not on the current song, then go back to showing the index
-  //otherwise you are on the currently playing song and you should
-  //not do anything...or show the pause icon
-
-  //}
-
   setSong(song) {
     this.audioElement.src = song.audioSrc;
     this.setState({ currentSong: song });
@@ -101,6 +88,9 @@ class Album extends Component {
 
   handleSongClick = song => {
     const isSameSong = this.state.currentSong === song;
+    console.log(this.state.currentSong);
+    console.log(isSameSong.toString());
+    console.log(this.state.isPlaying);
     if (this.state.isPlaying && isSameSong) {
       this.pause();
     } else {
@@ -200,8 +190,6 @@ class Album extends Component {
             album={this.state.album}
             handleSongClick={this.handleSongClick}
             formatTime={t => this.formatTime(t)}
-            //enterMouse={this.enterMouse}
-            //leaveMouse={this.leaveMouse}
           />
         </section>
       </section>
@@ -209,4 +197,7 @@ class Album extends Component {
   }
 }
 
-export default Album;
+export default connect(
+  null,
+  { playSong, pauseSong }
+)(Album);

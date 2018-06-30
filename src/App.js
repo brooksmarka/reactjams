@@ -5,6 +5,7 @@ import Landing from "./components/Landing";
 import Library from "./components/Library";
 import Album from "./components/Album";
 import Header from "./components/Header";
+import Player from "./components/Player";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/library" component={Library} />
           <Route path="/album/:slug" component={Album} />
         </main>
+        <Player />
       </div>
     );
   }
