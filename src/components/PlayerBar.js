@@ -49,9 +49,9 @@ class PlayerBar extends Component {
             onChange={this.props.handleTimeChange}
           />
           <div className="total-time">
-            {this.props.isPlaying
+            {this.props.duration
               ? this.props.formatTime(this.props.duration)
-              : null}
+              : '00:00'}
           </div>
         </section>
         <section id="volume-control">
