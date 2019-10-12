@@ -155,7 +155,7 @@ class Album extends Component {
     var m = Math.floor(secs / 60) - h * 60;
     var s = Math.floor(secs - h * 3600 - m * 60);
 
-    return addZero(m) + ":" + addZero(s);
+    return m + ":" + addZero(s);
   }
 
   render() {
