@@ -4,6 +4,17 @@ class PlayerBar extends Component {
   nextSong() {}
 
   render() {
+    const style= {
+      timeComponent: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      timeSlider: {
+        margin: '1em',
+      }
+    };
+
     return (
       <section className="player-bar avenir">
         <section className="buttons pl2 tc" id="buttons">
@@ -35,11 +46,12 @@ class PlayerBar extends Component {
             <span className="ion-skip-forward" />
           </button>
         </section>
-        <section className="time-control" id="time-control">
+        <section style={style.timeComponent} className="time-control" id="time-control">
           <div className="current-time pa1">
             {this.props.formatTime(this.props.currentTime)}
           </div>
           <input
+            style={style.timeSlider}
             type="range"
             className="seek-bar pa1"
             value={this.props.currentTime / this.props.duration || 0}
@@ -49,14 +61,15 @@ class PlayerBar extends Component {
             onChange={this.props.handleTimeChange}
           />
           <div className="total-time">
-            {this.props.isPlaying
+            {this.props.duration
               ? this.props.formatTime(this.props.duration)
-              : null}
+              : '00:00'}
           </div>
         </section>
-        <section id="volume-control">
+        <section style={style.timeComponent} id="volume-control">
           <div className="icon ion-volume-low pa1" />
           <input
+          style={style.timeSlider}
             type="range"
             className="seek-bar "
             value={this.props.volume}

@@ -1,6 +1,7 @@
 html {
   height: 100%; /* makes sure our HTML takes up 100% of the browser window */
   font-size: 100%;
+  background-color: #438eac;
 }
 
 body {
