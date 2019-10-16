@@ -70,3 +70,14 @@ ul {
   color: #110934;
   font-size: 5rem;
 }
+
+.album-details {
+  display: 'flex';
+  flex-direction: column;
+  margin-top: 6%;
+  background-color: #110934;
+  width: 27%;
+  margin-left: 14em;
+  padding: 56px 53px;
+  border-radius: 10%;
+}

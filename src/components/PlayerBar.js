@@ -19,14 +19,14 @@ class PlayerBar extends Component {
       <section className="player-bar avenir">
         <section className="buttons pl2 tc" id="buttons">
           <button
-            className="back-button pv2 ph3 bw0 ba link br-pill dim mb3 bg-dark-purple turq"
+            className="back-button pv2 ph3 bw0 ba link br-pill dim mb3 dark-purple bg-turq"
             id="previous"
             onClick={this.props.handlePrevClick}
           >
             <span className="ion-skip-backward" />
           </button>
           <button
-            className="play-pause pv2 mh3 ph4 bw0 ba link br-pill dim mb3 bg-dark-purple turq"
+            className="play-pause pv2 mh3 ph4 bw0 ba link br-pill dim mb3 dark-purple bg-turq"
             id="play-pause"
             onClick={this.props.handleSongClick}
           >
@@ -39,7 +39,7 @@ class PlayerBar extends Component {
             />
           </button>
           <button
-            className="forward-button pv2 ph3 bw0 ba link br-pill dim mb3 bg-dark-purple b-dark-purple turq"
+            className="forward-button pv2 ph3 bw0 ba link br-pill dim mb3 dark-purple bg-turq"
             id="next"
             onClick={this.props.handleNextClick}
           >
