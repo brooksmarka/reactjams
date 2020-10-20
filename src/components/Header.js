@@ -6,7 +6,7 @@ const Header = () => (
     <nav className="nav dt fw6 w-100">
       <Link to="/" title="Home" className="dtc v-mid mid-gray link dim w-25 tl">
         <img
-          src="./assets/images/rjlogo.png"
+          src="/assets/images/rjlogo.png"
           alt="Site Logo"
           className="dib w3 h3"
         />
