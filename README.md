@@ -4,7 +4,7 @@ _ReactJams is a digital music player, like Spotify, built using_ [React](https:/
 
 ## Initialization
 
-This project was initialized using [Create React App](https://github.com/facebookincubator/create-react-app). For further information, please refer to the most recent version of this [Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) which contains information on how to perform common tasks.
+This project was initialized using [Create React App](https://github.com/facebookincubator/create-react-app). For further information, please refer to the most recent version of this [Guide](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md) which contains information on how to perform common tasks.
 
 ### User Stories and Acceptance Criteria
 
