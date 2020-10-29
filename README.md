@@ -8,8 +8,11 @@ Please use Node 10 or higher
 `nvm use 10`
 
 `git clone git@github.com:brooksmarka/reactjams.git` (or fork the repo)
+
 `cd reactjams`
+
 `npm i`
+
 `npm start`
 
 ## Initialization
