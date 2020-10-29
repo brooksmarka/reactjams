@@ -4,6 +4,9 @@ _ReactJams is a digital music player, like Spotify, built using_ [React](https:/
 
 ## Quick Start
 
+Please use Node 10 or higher
+`nvm use 10`
+
 `git clone git@github.com:brooksmarka/reactjams.git` (or fork the repo)
 `cd reactjams`
 `npm i`
