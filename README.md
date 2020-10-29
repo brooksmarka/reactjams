@@ -2,6 +2,13 @@
 
 _ReactJams is a digital music player, like Spotify, built using_ [React](https://reactjs.org/).
 
+## Quick Start
+
+`git clone git@github.com:brooksmarka/reactjams.git` (or fork the repo)
+`cd reactjams`
+`npm i`
+`npm start`
+
 ## Initialization
 
 This project was initialized using [Create React App](https://github.com/facebookincubator/create-react-app). For further information, please refer to the most recent version of this [Guide](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md) which contains information on how to perform common tasks.
